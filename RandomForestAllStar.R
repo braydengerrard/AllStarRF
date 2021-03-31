@@ -48,6 +48,7 @@ Rookie21 <- read.csv("Rookie21.csv")
 Rookie21$efgnorm <- Rookie21$eFG.-0.537
 Rookie21ADV <- read.csv("Rookie21ADV.csv")
 Rookie21t <- merge(Rookie21,Rookie21ADV)
+Rookie21t <- subset(Rookie21t, G >20)
 
 #Get predictions for rookies from 20/21 seasonj
 R21p <- predict(All_Star_RFAdv, Rookie21t, type = "prob")
